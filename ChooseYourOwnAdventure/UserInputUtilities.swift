@@ -84,10 +84,11 @@ func getChoiceFromUser(prompt: String, choices: [String]) -> String {
     
     print(newPrompt)
     let selectedIndex: Int = getIntFromUser(prompt: nil,
-                                            failureMessage: newPrompt,
+                                            failureMessage: "You must choose a number from 1 to \(choices.count)",
                                             predicate: { input in
-                                                (input >= 1) && (input <= count)
+                                                (input >= 1) && (input <= choices.count)
     })
+    
     
     return choices[selectedIndex - 1]
     
